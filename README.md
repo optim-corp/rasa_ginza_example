@@ -11,6 +11,7 @@ This project is for **OPTiM TECH BLOG**.
 ```
 pip install -r requirements.txt
 rasa train --force
+rasa run actions &
 rasa hsell
 ```
 
