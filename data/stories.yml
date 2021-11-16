@@ -1,0 +1,20 @@
+version: "2.0"
+
+stories:
+
+- story: greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_back
+
+
+- story: reservation
+  steps:
+  - intent: reserve
+  - action: utter_reserve
+  - action: reservation_form
+  - active_loop: reservation_form
+  - active_loop: null
+  - action: action_reservation_time
+  - action: action_restart

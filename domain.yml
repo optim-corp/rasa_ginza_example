@@ -1,0 +1,35 @@
+version: "2.0"
+
+intents:
+  - greet
+  - reserve
+
+entities:
+  - Time
+
+slots:
+  Time:
+    type: text
+    influence_conversation: false
+
+responses:
+  utter_greet:
+    - text: "こんにちは！"
+  utter_reserve:
+    - text: "予約したい時間を入力してください。"
+  utter_not_understand:
+    - text: "すみません。よくわかりませんでした。"
+
+forms:
+  reservation_form:
+    required_slots:
+      Time:
+        - type: from_entity
+          entity: Time
+
+actions:
+  - action_reservation_time
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
